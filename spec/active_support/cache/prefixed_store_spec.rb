@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ActiveSupport::Cache::PrefixedStore do
+describe ActiveSupport::Cache::NamespacedStore do
   let(:store) { ActiveSupport::Cache::MemoryStore.new }
   let(:cache) { described_class.new 'prefix:', store }
 

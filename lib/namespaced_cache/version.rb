@@ -1,3 +1,3 @@
-module PrefixedCache
+module NamespacedCache
   VERSION = '0.0.1'
 end
