@@ -1,4 +1,4 @@
-# ActiveSupport::Cache::PrefixedStore
+# ActiveSupport::Cache::NamespacedStore
 
 A simple ActiveSupport::Cache implementation that wraps another implementation to prefix/namespace keys.
 
@@ -7,7 +7,7 @@ A simple ActiveSupport::Cache implementation that wraps another implementation t
 ```ruby
 Rails.cache.write('prefix:1', 'foo')
 
-cache = ActiveSupport::Cache::PrefixedStore.new 'prefix:', Rails.cache
+cache = ActiveSupport::Cache::NamespacedStore.new 'prefix:', Rails.cache
 cache.read '1'
 # => 'foo'
 ```
