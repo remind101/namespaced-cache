@@ -33,6 +33,10 @@ module ActiveSupport::Cache
       store.fetch(namespaced(key), *args, &block)
     end
 
+    def delete(key, *args)
+      store.delete(namespaced(key), *args)
+    end
+    
     def clear
       store.delete_matched(namespace)
     end

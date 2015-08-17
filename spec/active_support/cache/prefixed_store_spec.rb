@@ -59,6 +59,18 @@ describe ActiveSupport::Cache::NamespacedStore do
     end
   end
 
+  describe '#delete' do
+    before do
+      store.write('prefix:key', 'value')
+    end
+
+    it 'removes the item from the cache' do
+      expect {
+        cache.delete('key')
+      }.to change { store.read('prefix:key') }.from('value').to(nil)
+    end
+  end
+
   describe '#clear' do
     before do
       store.write('prefix:key1', 'value1')
